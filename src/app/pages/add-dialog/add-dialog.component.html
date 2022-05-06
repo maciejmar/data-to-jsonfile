@@ -1,0 +1,39 @@
+<div class="grid">
+  <form (ngSubmit)="send()" class="container">
+    <div class="row">
+      <div class="input-field col s8">
+        <input [(ngModel)]="model.sectionName" id="sectionName" name="section" type="text" />
+        <label for="sectionName">Section Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input  [(ngModel)]="model.textName" id="textName" name="textName" type="text"/>
+        <label for="textName">Text Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input [(ngModel)]="model.pl" id="pl" name="pl" type="text"/>
+        <label for="pl">pl text</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input [(ngModel)]="model.en" id="en" name="en" type="text" />
+        <label for="director">text en</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input [(ngModel)]="model.de" id="de" name="de" type="text" />
+        <label for="de">text de</label>
+      </div>
+    </div>
+
+
+
+    <button class="btn-small" type="submit">Submit</button>
+    <button class="btn-small red" type="reset">Reset</button>
+  </form>
+</div>

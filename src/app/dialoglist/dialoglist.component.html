@@ -1,0 +1,31 @@
+<p>Dialogs list</p>
+
+<div class="dialogs">
+  <table class="stripped">
+    <thead class="card blue darken-4 card-content white-text">
+      
+      <th class="card blue darken-4 card-content white-text">Section</th>
+      <th class="card blue darken-4 card-content white-text">Name of Dialog</th>
+      <th class="card blue darken-4 card-content white-text">Text PL</th>
+      <th class="card blue darken-4 card-content white-text">Text EN</th>
+      <th class="card blue darken-4 card-content white-text">Text DE</th>
+    </thead>
+    <tbody>
+
+
+
+          <ng-container *ngFor="let dialog of dialogs">
+            <tr>
+                <td class="card cyan ">{{dialog.sectionName}}</td>
+                <td class="card blue">{{dialog.textName}}</td>
+                <td class="card cyan">{{dialog.pl}}</td>
+                <td class="card blue">{{dialog.en}}</td>
+                <td class="card cyan">{{dialog.de}}</td>
+            </tr>
+
+          </ng-container>
+
+
+    </tbody>
+ </table>
+</div>

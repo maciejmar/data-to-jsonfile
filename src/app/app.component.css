@@ -1,0 +1,51 @@
+body{
+  background-color: rgb(177, 62, 62);
+
+}
+#grad{
+  background-image: linear-gradient(rgb(13, 114, 55), rgb(204, 204, 175));
+  width: 1200px; height:200px; margin: 0 auto;
+}
+input,textarea{
+  background-color:bisque;
+  border-radius:6px;
+  border:0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  margin:4px;
+  padding:8px;
+  width:500px;
+}
+input,textarea:hover{
+  background-color: rgb(165, 179, 179);
+}
+p{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 8px;
+  color:rgb(179, 182, 141);
+}
+
+
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -5px; /* remove the inital 5px space */
+  width: auto;
+}
+.grid__item {
+  max-width: 234px;
+  padding: 0 5px; /* should be same as the negative margin above. */
+}
+
+.card-content {
+  min-height: 180px;
+}
+
+.card-title {
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+

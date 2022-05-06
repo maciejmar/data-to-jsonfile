@@ -1,0 +1,43 @@
+
+<div id="grad">
+<p>Add here the data to json file</p>
+<nav>
+  <div class="nav-wrapper black">
+    <a class="brand-logo" routerLink="/">Nicpoń Dialogs</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a routerLink="/dialogs" routerLinkActive="active">Dialogs</a></li>
+      <li><a routerLink="/sections" routerLinkActive="active">Sections</a></li>
+      <li><a routerLink="/add-dialog" routerLinkActive="active">Add Dialog</a></li>
+      <li>
+    </ul>
+  </div>
+</nav>
+</div>
+<!----
+  <div class="container">
+    <div class="inputBlock">
+      <input [(ngModel)]="sectionName" placeholder="Name of the section" >
+      <br>
+      <br>
+      <input [(ngModel)]="textName" placeholder="Name of the text" >
+      <br>
+      <br>
+      <textarea [(ngModel)]="pl" placeholder="dialog pl" type="text"></textarea>
+      <br>
+      <br>
+      <textarea [(ngModel)]="en" placeholder="dialog en" type="text"></textarea>
+      <br>
+      <br>
+      <textarea [(ngModel)]="de" placeholder="dialog de" type="text"></textarea>
+      <br>
+      <button class="btn waves-effect waves-light" type="submit" name="action" (click)="createDialog()">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </div>
+  <app-dialoglist></app-dialoglist>
+</div>
+-->
+<router-outlet></router-outlet>
+
+

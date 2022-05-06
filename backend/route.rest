@@ -1,0 +1,28 @@
+GET  http://localhost:3000/dialogs
+###
+GET http://localhost:3000/dialogs/625e964a4e8f6815c4b66d2f
+
+###
+POST http://localhost:3000/dialogs
+content-type: application/json
+
+{
+  "sectionName": "Intro2",
+  "textName": "Nicpon second words",
+  "pl":"Co się stało?",
+  "en":"Whats happened?",
+  "de":"Was is los?"
+}
+###
+PATCH http://localhost:3000/dialogs/625e964a4e8f6815c4b66d2f
+content-Type: application/json
+
+{
+  "sectionName": "Introooooo2",
+  "textName": "Nicpon second words",
+  "pl":"Co się stało? Panocku",
+  "en":"Whats happened? Mister, mister",
+  "de":"Was is los? Herr Boss"
+}
+###
+DELETE http://localhost:3000/dialogs/625ebb1deb028d0b1aa2160e
