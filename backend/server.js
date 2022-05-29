@@ -1,9 +1,10 @@
 const express = require('express');
 require('dotenv').config();
-console.log('this is port ',process.env.PORT);
+console.log('this is port ', process.env.PORT);
 const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://memgos:1wZYisZslVQHNR0z@cluster0.jta1g.mongodb.net/nicponDialogs?retryWrites=true&w=majority')
 
-mongoose.connect('mongodb://localhost/nicponDialogs');
+//mongoose.connect('mongodb://localhost/nicponDialogs');
 const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.once('open', ()=> console.log('Connected to Database'));
