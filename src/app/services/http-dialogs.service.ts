@@ -9,15 +9,18 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { Dialog } from '../dialog';
 import { catchError, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 //import { DialogstwoComponent } from '../pages/dialogstwo/dialogstwo';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HttpDialogService {
-  private url = 'http://localhost:3000/dialogs';
+  private url: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.url = environment.URL_DIALOGS;
+  }
 
   getDialogs(): Observable<Dialog[]> {
     return this.http.get<Dialog[]>(this.url).pipe(tap(console.log));
@@ -75,7 +78,7 @@ export class HttpDialogService {
     const myHeaders = new HttpHeaders({
       Authorizations: 'my_token',
       'Content-Type': 'application/json',
-      'X-Custom-Header': 'zacznij_programowac',
+      'X-Custom-Header': 'Nicpon',
     });
     return this.http
       .get<Dialog[]>(this.url, { observe: 'response', headers: myHeaders })

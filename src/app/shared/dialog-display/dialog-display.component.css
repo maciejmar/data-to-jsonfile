@@ -4,21 +4,21 @@ img {
 }
 
 .grid__item {
-  max-width: 234px;
+  max-width: 100%;
   padding: 0 5px;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  
+
 }
 
 .card-content {
   min-height: 140px;
-  
+
 }
 
 .card-title {
   width: 100%;
-  
-  
+
+
 }
 
 .black-text:hover {
