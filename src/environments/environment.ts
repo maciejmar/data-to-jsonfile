@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   URL_DIALOGS: 'http://localhost:3000/dialogs',
   URL_SECTIONS: 'http://localhost:3000/sections'
 };
