@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Dialog } from '../dialog';
+import { DialogstwoComponent } from '../pages/dialogstwo/dialogstwo.component';
 import dialogData from './dialoglist.json'
 
 
@@ -11,7 +12,8 @@ import dialogData from './dialoglist.json'
 export class DialoglistComponent implements OnInit {
 
   isClicked=false;
-  @Input() dialogs: Dialog[]=dialogData;
+  @Input() dialogs: Dialog[] = dialogData;
+
   constructor() { }
 
   ngOnInit(): void {

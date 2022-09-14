@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Dialog } from './dialog';
+import { Segment } from './segment'
 import dialogData from "./dialoglist/dialoglist.json";
 
 
@@ -10,26 +11,21 @@ import dialogData from "./dialoglist/dialoglist.json";
 })
 export class AppComponent {
   title = 'data-to-jsonfile';
-  sectionName: string='';
-  textName: string='';
-  pl:string ='';
-  de: string ='';
-  en: string ='';
+  dialogName ='';
   dialogs: Dialog[] = dialogData;
+
+  segment: Segment[];
 
 
 
 createDialog() {
   const dialog:Dialog = {
-    sectionName:this.sectionName,
-    textName:this.textName,
-    pl:this.pl,
-    en:this.en,
-    de:this.de
+    dialogName:this.dialogName,
+    segment:this.segment
   }
   this.dialogs.push(dialog);
-  this.sectionName ='';
-  this.textName='';
+  this.fileName ='';
+  this.textduration='';
   this.pl = '';
   this.en ='';
   this.de = '';

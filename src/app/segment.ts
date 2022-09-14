@@ -1,7 +1,4 @@
-export interface Dialog {
-  _id?: string;
-  dialogName: string;
-  segment: {
+export interface Segment {
   fileName: string [],
   textDuration: number [],
   characterName: string [],
@@ -9,7 +6,7 @@ export interface Dialog {
   pl: string,
   en: string,
   de: string
-  }[]
+  }
 
 
-}
+

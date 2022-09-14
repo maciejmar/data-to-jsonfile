@@ -29,9 +29,9 @@ export class HttpService {
   getSections(): Observable<string[]>{
     return this.httpClient.get<string[]>(this.url_s)
   }
-  getDialogsFromSection(section:string): Observable<Dialog[]>{
+  getDialogsFromSection(dialogName:string): Observable<Dialog[]>{
     return this.getDialogs().pipe(
-      map(dialogs => dialogs.filter(dialog => dialog.sectionName === section))
+      map(dialogs => dialogs.filter(dialog => dialog.dialogName === dialogName))
     );
   }
   postDialog(dialogstwo: Dialog){

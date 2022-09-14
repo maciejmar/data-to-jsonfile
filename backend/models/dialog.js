@@ -5,13 +5,18 @@ const dialogSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  part:[{
-      textName: {
-        type: String,
+  segment:[{
+
+      fileName: {
+        type: [],
         required: true
       },
-      fileName: {
-        type: String,
+      textDuration: {
+        type:  [],
+        required: true
+      },
+      characterName: {
+        type: [],
         required: true
       },
       pl:{

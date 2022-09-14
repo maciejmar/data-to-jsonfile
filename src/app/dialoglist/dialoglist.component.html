@@ -3,7 +3,7 @@
 <div class="dialogs">
   <table class="stripped">
     <thead class="card blue darken-4 card-content white-text">
-      
+
       <th class="card blue darken-4 card-content white-text">Section</th>
       <th class="card blue darken-4 card-content white-text">Name of Dialog</th>
       <th class="card blue darken-4 card-content white-text">Text PL</th>
@@ -15,14 +15,18 @@
 
 
           <ng-container *ngFor="let dialog of dialogs">
-            <tr>
-                <td class="card cyan ">{{dialog.sectionName}}</td>
-                <td class="card blue">{{dialog.textName}}</td>
-                <td class="card cyan">{{dialog.pl}}</td>
-                <td class="card blue">{{dialog.en}}</td>
-                <td class="card cyan">{{dialog.de}}</td>
-            </tr>
-
+            <p>{{dialog.dialogName}}</p>
+            <ng-container *ngFor="let dialogSegment of dialog.segment">
+              <tr>
+                  <td class="card cyan ">{{dialogSegment.fileName}}</td>
+                  <td class="card blue">{{dialogSegment.textDuration}}</td>
+                  <td class="card blue">{{dialogSegment.characterName}}</td>
+                  <td class="card blue">{{dialogSegment.characterSprite}}</td>
+                  <td class="card cyan">{{dialogSegment.pl}}</td>
+                  <td class="card blue">{{dialogSegment.en}}</td>
+                  <td class="card cyan">{{dialogSegment.de}}</td>
+              </tr>
+            </ng-container>
           </ng-container>
 
 
