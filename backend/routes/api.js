@@ -2,8 +2,19 @@ const express = require('express');
 const router = express.Router();
 
 const Dialog = require('../models/dialog');
+const Name = require('../models/name')
+
+//all names
+router.get ('/names', async (req, res) => {
+  try{
+    const dialogs = await Dialog.find();
+    res.status(200).json(names);
+  } catch (err) {
+    res.status(500).json({message: err.message});
+  }
 
 
+});
 //all dialogs
 router.get('/dialogs', async (req, res) => {
   try{
