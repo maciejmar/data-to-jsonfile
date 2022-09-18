@@ -2,7 +2,7 @@ const mongoose  = require('mongoose');
 
 
 const nameSchema = new mongoose.Schema({
-  id: {
+  _id: {
     type: String,
     required: true
   },
@@ -10,10 +10,10 @@ const nameSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  displayName: {
+  displayName: [{
     type: String,
     required: true
-  },
+  }],
   characterImage: {
     type: String,
     required: true
@@ -22,26 +22,26 @@ const nameSchema = new mongoose.Schema({
     type: Boolean,
     required: true
   },
-  segments:[{
+  segments:{
 
-      active: {
-        type: boolean,
-        required: true
-      },
-      pl: {
+
+      pl: [{
         type:  String,
+        active: Boolean,
         required: true
-      },
-      en: {
+      }],
+      en: [{
         type: String,
+        active: Boolean,
         required: true
-      },
-      de: {
+      }],
+      de: [{
         type: String,
+        active: Boolean,
         required: true
-      }
+      }]
 
-  }]
+  }
 
 
 });

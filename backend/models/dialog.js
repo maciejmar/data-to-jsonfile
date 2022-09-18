@@ -7,18 +7,18 @@ const dialogSchema = new mongoose.Schema({
   },
   segment:[{
 
-      fileName: {
-        type: [],
+      fileName: [{
+        type: String,
         required: true
-      },
-      textDuration: {
-        type:  [],
+      }],
+      textDuration: [{
+        type:  String,
         required: true
-      },
-      characterName: {
-        type: [],
+      }],
+      characterName: [{
+        type: String,
         required: true
-      },
+      }],
       pl:{
         type: String,
         required: true

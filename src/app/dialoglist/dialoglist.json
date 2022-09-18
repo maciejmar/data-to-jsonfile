@@ -1,6 +1,6 @@
 [
- {"dialogName":"introduction",
-  "segment": {
+ [{"dialogName":"introduction",
+  "segment": [{
               "fileName":["nicpon-1-1","nicpon-1-1-en","nicpon-1-1-de"],
               "textDuration":[1,1,1],
               "characterName":["Nicpoń","Blighter","Schlingel"],
@@ -8,10 +8,20 @@
               "pl":"Co sie stało? Tyle literek zniknęło!",
               "en":"What's happened? So mutch letters are gone!",
               "de":"Was is los? So viele Buchstaben sind verschwunden!"
-            }
+            },
+            {
+              "fileName":["nicpon-1-1","nicpon-1-1-en","nicpon-1-1-de"],
+              "textDuration":[1,1,1],
+              "characterName":["Nicpoń","Blighter","Schlingel"],
+              "characterSprite": "nicpon-face-dialog",
+              "pl":"Co sie stało? Tyle literek zniknęło!",
+              "en":"What's happened? So mutch letters are gone!",
+              "de":"Was is los? So viele Buchstaben sind verschwunden!"
+            }]
+
   },
   {"dialogName":"introduction",
-  "segment": {
+  "segment": [{
               "fileName":["nicpon-1-1","nicpon-1-1-en","nicpon-1-1-de"],
               "textDuration":[1,1,1],
               "characterName":["Nicpoń","Blighter","Schlingel"],
@@ -19,10 +29,10 @@
               "pl":"Co sie stało? Tyle literek zniknęło!",
               "en":"What's happened? So mutch letters are gone!",
               "de":"Was is los? So viele Buchstaben sind verschwunden!"
-            }
-  },
+            }]
+  }],
   {"dialogName":"introduction-2",
-  "segment": {
+  "segment": [{
               "fileName":["nicpon-1-1","nicpon-1-1-en","nicpon-1-1-de"],
               "textDuration":[1,1,1],
               "characterName":["Nicpoń","Blighter","Schlingel"],
@@ -30,6 +40,7 @@
               "pl":"Co sie stało? Tyle literek zniknęło!",
               "en":"What's happened? So mutch letters are gone!",
               "de":"Was is los? So viele Buchstaben sind verschwunden!"
-            }
+            }]
   }
+
 ]

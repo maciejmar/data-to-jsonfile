@@ -27,13 +27,13 @@ export class EditDialogComponent implements OnInit {
   serviceName1: string|null ='';
   constructor(private http: HttpDialogService, private httpDialogService: HttpDialogService, private route: ActivatedRoute,
     private router: Router) { }
-    
-  
+
+
   ngOnInit(): void {
-    
+
         //this.model.sectionName=this.dialogstwo.sectionName;
     this._id=this.route.snapshot.paramMap.get('_id');
-    
+
     console.log('ngoninit edit dialog this._id ',this._id);
 
     console.log('getDialog = ',this.httpDialogService.getDialog(this._id!) );
@@ -41,47 +41,45 @@ export class EditDialogComponent implements OnInit {
       .subscribe(
         val => {
           this.data.push(val)
-          
-        
+
+
        //console.log('res',Object.values(res))
-       
+
     });
     this.sectionName1 =this.data;
     //console.log('this.data[0].pl', this.data[0].pl)
     console.log('data =', this.data,"object keys =", Object.keys(this.data));
     //console.log('data[0]=', this.data[0].de)
-    
-      
-    
-      
+
+
+
+
       //map((keys,vals)=>this.mymap.set(keys,vals))
-      
-           
-      
+
+
+
       this.httpDialogService.getDialog(this._id!);
 
-       
+
   }
-      
 
 
-    
-  
-  
+
+
+
+
 
   send(_id:string |null, dialogOne:Dialog) {
     const dialog1: Dialog = {
       _id: this._id!,
-      sectionName : this.model.sectionName!,
-      textName : this.model.textName!,
-      pl: this.model.pl!,
-      en: this.model.en!,
-      de: this.model.de!
+      dialogName : this.model.dialogName!,
+      segment : this.model.segment!,
+      
     };
 
     console.log('Gentelemens and Ladies. This model is ', this.model, '  and dialog1:',dialog1);
     console.log('this._id ',this._id );
-   
+
     this.httpDialogService.patchDialog(dialog1 as Dialog).subscribe(
 
       result => console.log(result),

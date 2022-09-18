@@ -3,32 +3,32 @@
   <form (ngSubmit)="send(_id, dialogOne )" class="container">
     <div class="row">
       <div class="input-field col s8">
-        <input [(ngModel)]="model.sectionName" id="sectionName" name="sectionName" type="text" [placeholder]="this.data[0].sectionName" />
-        
+        <input [(ngModel)]="model.dialogName" id="dialogName" name="dialogName" type="text" [placeholder]="this.data[0].dialogName" />
+
       </div>
     </div>
     <div class="row">
       <div class="input-field col s8">
-        <input  [(ngModel)]="model.textName" id="textName" name="textName" type="text" [placeholder]="this.data[0].textName"/>
-        
+        <input  [(ngModel)]="model.segment.textDuration" id="textDuration" name="textDuration" type="text" [placeholder]="this.data[0].segment.textDuration"/>
+
       </div>
     </div>
     <div class="row">
       <div class="input-field col s8">
         <input [(ngModel)]="model.pl" id="pl" name="pl" type="text" [placeholder]="this.data[0].pl"/>
-        
+
       </div>
     </div>
     <div class="row">
       <div class="input-field col s8">
         <input [(ngModel)]="model.en" id="en" name="en" type="text" [placeholder]="this.data[0].en" />
-        
+
       </div>
     </div>
     <div class="row">
       <div class="input-field col s8">
         <input [(ngModel)]="model.de" id="de" name="de" type="text" [placeholder]="this.data[0].de" />
-        
+
       </div>
     </div>
 

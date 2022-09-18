@@ -12,8 +12,25 @@ router.get ('/names', async (req, res) => {
   } catch (err) {
     res.status(500).json({message: err.message});
   }
+});
 
-
+//post a name
+router.post('/names', async (req,res) => {
+  console.log('body',req.body)
+  const name = new Name({
+    _id: req.body._id,
+    name: req.body.name,
+    displayName: req.body.displayName,
+    pl: req.body.pl,
+    en: req.body.en,
+    de: req.body.de
+  });
+try{
+  const newName = await name.save();
+  res.status(201).json(newName)
+ }catch(err){
+  res.status(400).json({message:err.message});
+ }
 });
 //all dialogs
 router.get('/dialogs', async (req, res) => {
@@ -35,13 +52,8 @@ router.get('/dialogs/:id', getDialog, (req,res) => {
 //post a dialog
 router.post('/dialogs', async (req,res) => {
   console.log('body',req.body)
-  const dialog = new Dialog({
-    sectionName: req.body.sectionName,
-    textName: req.body.textName,
-    pl: req.body.pl,
-    en: req.body.en,
-    de: req.body.de
-  });
+  const dialog = new Dialog( JSON.parse(JSON.stringify(req.body))
+  );
 try{
   const newDialog = await dialog.save();
   res.status(201).json(newDialog)

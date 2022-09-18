@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Dialog } from './dialog';
-import { Segment } from './segment'
 import dialogData from "./dialoglist/dialoglist.json";
 
 
@@ -11,24 +10,37 @@ import dialogData from "./dialoglist/dialoglist.json";
 })
 export class AppComponent {
   title = 'data-to-jsonfile';
-  dialogName ='';
+  dialogName:string ='';
+  fileName:string[]=[];
+  textDuration:number[]=[];
+  characterName:string[]=[];
+  characterSprite:string='';
+  pl:string='';
+  en:string='';
+  de:string='';
+
   dialogs: Dialog[] = dialogData;
 
-  segment: Segment[];
 
 
 
 createDialog() {
   const dialog:Dialog = {
     dialogName:this.dialogName,
-    segment:this.segment
+      segment:[{
+      fileName:this.fileName,
+      textDuration:this.textDuration,
+      characterName:this.characterName,
+      characterSprite:this.characterSprite,
+      pl:this.pl,
+      en:this.en,
+      de:this.de
+      }]
   }
+
   this.dialogs.push(dialog);
-  this.fileName ='';
-  this.textduration='';
-  this.pl = '';
-  this.en ='';
-  this.de = '';
+
+
   const jsonData = JSON.stringify(this.dialogs);
   // (A) CREATE BLOB OBJECT
   var myBlob = new Blob([jsonData], {type: "text/plain"});
@@ -45,6 +57,6 @@ createDialog() {
   anchor.click();
   window.URL.revokeObjectURL(url);
   document.removeChild(anchor);
+ }
 }
 
-}
