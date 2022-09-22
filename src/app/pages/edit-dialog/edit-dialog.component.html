@@ -7,29 +7,50 @@
 
       </div>
     </div>
-    <div class="row">
-      <div class="input-field col s8">
-        <input  [(ngModel)]="model.segment.textDuration" id="textDuration" name="textDuration" type="text" [placeholder]="this.data[0].segment.textDuration"/>
+    <div *ngFor="oneSegment of model.segments; let i =index">
 
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s8">
-        <input [(ngModel)]="model.pl" id="pl" name="pl" type="text" [placeholder]="this.data[0].pl"/>
+          <div class="row">
+            <div class="input-field col s8">
+              <input  [(ngModel)]="oneSegment.fileName" id="fileName" name="fileName" type="text" [placeholder]="this.data[0].segments.fileName"/>
+            </div>
+          </div>
 
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s8">
-        <input [(ngModel)]="model.en" id="en" name="en" type="text" [placeholder]="this.data[0].en" />
+          <div class="row">
+            <div class="input-field col s8">
+              <input  [(ngModel)]="oneSegment.textDuration" id="textDuration" name="textDuration" type="text" [placeholder]="this.data[0].segments.textDuration"/>
+            </div>
+          </div>
 
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s8">
-        <input [(ngModel)]="model.de" id="de" name="de" type="text" [placeholder]="this.data[0].de" />
+          <div class="row">
+            <div class="input-field col s8">
+              <input [(ngModel)]="oneSegment.characterName" id="characterName" name="characterName" type="text" [placeholder]="this.data[0].segments.characterName"/>
+            </div>
+          </div>
 
-      </div>
+          <div class="row">
+            <div class="input-field col s8">
+              <input [(ngModel)]="oneSegment.characterSprite" id="characterSprite" name="characterSprite" type="text" [placeholder]="this.data[0].segments.characterSprite"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s8">
+              <input [(ngModel)]="oneSegment.pl" id="pl" name="pl" type="text" [placeholder]="this.data[0].pl"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s8">
+              <input [(ngModel)]="oneSegment.en" id="en" name="en" type="text" [placeholder]="this.data[0].en" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s8">
+              <input [(ngModel)]="oneSegment.de" id="de" name="de" type="text" [placeholder]="this.data[0].de" />
+            </div>
+          </div>
+
     </div>
 
     <button class="btn-small" type="submit">Submit</button>

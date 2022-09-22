@@ -1,7 +1,7 @@
 export interface Dialog {
     _id?:string;
     dialogName: string;
-    segment:[
+    segments:[
       {
         fileName:string[],
         textDuration: number[],

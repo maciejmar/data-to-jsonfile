@@ -21,17 +21,14 @@ export class DeleteDialogComponent implements OnInit {
   ngOnInit(): void {
     this._id=this.route.snapshot.paramMap.get('_id');
     console.log('this._id ',this._id);
-    
+
   }
 
   send(_id:string |null) {
     const dialog1: Dialog ={
       _id: this._id!,
-      sectionName : this.model.sectionName!,
-      textName : this.model.textName!,
-      pl: this.model.pl!,
-      en: this.model.en!,
-      de: this.model.de!
+      dialogName : this.model.dialogName!,
+      segments:this.model.segments!
     };
   console.log('Gentelemens!!! and Ladies. This model is ', this.model, '  and dialog1:',dialog1,);
   // this.model._id = stringify(this._id);

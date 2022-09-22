@@ -25,8 +25,10 @@ export class EditDialogComponent implements OnInit {
   mymap = new Map<string,string>();
   data = [] as any;
   serviceName1: string|null ='';
-  constructor(private http: HttpDialogService, private httpDialogService: HttpDialogService, private route: ActivatedRoute,
-    private router: Router) { }
+  oneSegment=[] as any;
+
+  constructor(private http: HttpDialogService, private httpDialogService: HttpDialogService,
+    private route: ActivatedRoute, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -65,16 +67,12 @@ export class EditDialogComponent implements OnInit {
 
 
 
-
-
-
-
   send(_id:string |null, dialogOne:Dialog) {
     const dialog1: Dialog = {
       _id: this._id!,
       dialogName : this.model.dialogName!,
-      segment : this.model.segment!,
-      
+      segments : this.model.segments!,
+
     };
 
     console.log('Gentelemens and Ladies. This model is ', this.model, '  and dialog1:',dialog1);

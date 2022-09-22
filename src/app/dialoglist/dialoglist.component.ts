@@ -12,7 +12,8 @@ import dialogData from './dialoglist.json'
 export class DialoglistComponent implements OnInit {
 
   isClicked=false;
-  @Input() dialogs: Dialog[] = dialogData;
+  @Input() dialogs: Dialog[];
+  //dialogs = dialogData;
 
   constructor() { }
 

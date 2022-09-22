@@ -2,38 +2,53 @@
   <form (ngSubmit)="send()" class="container">
     <div class="row">
       <div class="input-field col s8">
-        <input [(ngModel)]="model.sectionName" id="sectionName" name="section" type="text" />
-        <label for="sectionName">Section Name</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s8">
-        <input  [(ngModel)]="model.textName" id="textName" name="textName" type="text"/>
-        <label for="textName">Text Name</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s8">
-        <input [(ngModel)]="model.pl" id="pl" name="pl" type="text"/>
-        <label for="pl">pl text</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s8">
-        <input [(ngModel)]="model.en" id="en" name="en" type="text" />
-        <label for="director">text en</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s8">
-        <input [(ngModel)]="model.de" id="de" name="de" type="text" />
-        <label for="de">text de</label>
+        <input [(ngModel)]="model.dialogName" id="dialogName" name="dialogName" type="text" [placeholder]="this.data[0].dialogName" />
       </div>
     </div>
 
+    <div *ngFor="oneSegment of model.segments; let i =index">
 
+          <div class="row">
+            <div class="input-field col s8">
+              <input  [(ngModel)]="oneSegment.fileName" id="fileName" name="fileName" type="text" [placeholder]="this.data[0].segments.fileName"/>
+            </div>
+          </div>
 
-    <button class="btn-small" type="submit">Submit</button>
-    <button class="btn-small red" type="reset">Reset</button>
+          <div class="row">
+            <div class="input-field col s8">
+              <input  [(ngModel)]="oneSegment.textDuration" id="textDuration" name="textDuration" type="text" [placeholder]="this.data[0].segments.textDuration"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s8">
+              <input [(ngModel)]="oneSegment.characterName" id="characterName" name="characterName" type="text" [placeholder]="this.data[0].segments.characterName"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s8">
+              <input [(ngModel)]="oneSegment.characterSprite" id="characterSprite" name="characterSprite" type="text" [placeholder]="this.data[0].segments.characterSprite"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s8">
+              <input [(ngModel)]="oneSegment.pl" id="pl" name="pl" type="text" [placeholder]="this.data[0].pl"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s8">
+              <input [(ngModel)]="oneSegment.en" id="en" name="en" type="text" [placeholder]="this.data[0].en" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s8">
+              <input [(ngModel)]="oneSegment.de" id="de" name="de" type="text" [placeholder]="this.data[0].de" />
+            </div>
+          </div>
+      </div>
   </form>
 </div>

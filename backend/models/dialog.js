@@ -5,7 +5,7 @@ const dialogSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  segment:[{
+  segments:[{
 
       fileName: [{
         type: String,

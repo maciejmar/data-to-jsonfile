@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 export class AddDialogComponent implements OnInit  {
  model: Partial<Dialog> = {};
  sections: string[] = [];
+ data = [] as any;
+ oneSegment=[] as any;
 
   constructor( private http:HttpDialogService, private httpDialogService :HttpDialogService, private router: Router)  { }
 
@@ -30,7 +32,7 @@ export class AddDialogComponent implements OnInit  {
         error => console.error(error) )
         this.router.navigate(['/dialogs']);
       }
-      
+
 
   }
 

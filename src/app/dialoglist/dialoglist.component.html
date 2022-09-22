@@ -16,7 +16,7 @@
 
           <ng-container *ngFor="let dialog of dialogs">
             <p>{{dialog.dialogName}}</p>
-            <ng-container *ngFor="let dialogSegment of dialog.segment">
+            <ng-container *ngFor="let dialogSegment of dialog.segments">
               <tr>
                   <td class="card cyan ">{{dialogSegment.fileName}}</td>
                   <td class="card blue">{{dialogSegment.textDuration}}</td>

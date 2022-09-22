@@ -1,6 +1,6 @@
 [
  [{"dialogName":"introduction",
-  "segment": [{
+  "segments": [{
               "fileName":["nicpon-1-1","nicpon-1-1-en","nicpon-1-1-de"],
               "textDuration":[1,1,1],
               "characterName":["Nicpoń","Blighter","Schlingel"],
@@ -21,7 +21,7 @@
 
   },
   {"dialogName":"introduction",
-  "segment": [{
+  "segments": [{
               "fileName":["nicpon-1-1","nicpon-1-1-en","nicpon-1-1-de"],
               "textDuration":[1,1,1],
               "characterName":["Nicpoń","Blighter","Schlingel"],
@@ -31,8 +31,8 @@
               "de":"Was is los? So viele Buchstaben sind verschwunden!"
             }]
   }],
-  {"dialogName":"introduction-2",
-  "segment": [{
+  [{"dialogName":"introduction-2",
+  "segments": [{
               "fileName":["nicpon-1-1","nicpon-1-1-en","nicpon-1-1-de"],
               "textDuration":[1,1,1],
               "characterName":["Nicpoń","Blighter","Schlingel"],
@@ -41,6 +41,6 @@
               "en":"What's happened? So mutch letters are gone!",
               "de":"Was is los? So viele Buchstaben sind verschwunden!"
             }]
-  }
+  }]
 
 ]

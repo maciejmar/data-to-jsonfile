@@ -19,7 +19,8 @@ export class AppComponent {
   en:string='';
   de:string='';
 
-  dialogs: Dialog[] = dialogData;
+  dialogs: Dialog[];
+  dialog = dialogData;
 
 
 
@@ -27,7 +28,7 @@ export class AppComponent {
 createDialog() {
   const dialog:Dialog = {
     dialogName:this.dialogName,
-      segment:[{
+      segments:[{
       fileName:this.fileName,
       textDuration:this.textDuration,
       characterName:this.characterName,
