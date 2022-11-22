@@ -1,63 +1,123 @@
+<div class="row">
+  <div class="col s9">
+<mat-card>
+    <mat-card-title>Here are the dialogs</mat-card-title>
+    <mat-card-content>
 
-<div class="grid">
-  <form (ngSubmit)="send(_id, dialogOne )" class="container">
-    <div class="row">
-      <div class="input-field col s8">
-        <input [(ngModel)]="model.dialogName" id="dialogName" name="dialogName" type="text" [placeholder]="this.data[0].dialogName" />
+     <mat-form-field appearance="fill" >
+       <mat-label>Choose dialog by name</mat-label>
+         <mat-select [(ngModel)]="dialogOne.dialogName" type="text"   >
+             <mat-option *ngFor="let dialog of dialogstwo | async; let i=index" (click)="doOnClick(this)"
+             [value]="dialog.dialogName">{{dialog.dialogName}}
 
-      </div>
-    </div>
-    <div *ngFor="oneSegment of model.segments; let i =index">
+             </mat-option>
+         </mat-select>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+    <mat-card-title>You-ve selected </mat-card-title>
+    <mat-card-content>
+       You-ve selected: {{dialogOne.dialogName}}
+    </mat-card-content>
+</mat-card>
 
-          <div class="row">
-            <div class="input-field col s8">
-              <input  [(ngModel)]="oneSegment.fileName" id="fileName" name="fileName" type="text" [placeholder]="this.data[0].segments.fileName"/>
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="input-field col s8">
-              <input  [(ngModel)]="oneSegment.textDuration" id="textDuration" name="textDuration" type="text" [placeholder]="this.data[0].segments.textDuration"/>
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="input-field col s8">
-              <input [(ngModel)]="oneSegment.characterName" id="characterName" name="characterName" type="text" [placeholder]="this.data[0].segments.characterName"/>
-            </div>
-          </div>
+    <mat-card class="col s9">
+      <mat-card-title>
+        Found dialog: {{dialogOne.dialogName}}
+      </mat-card-title>
+      <mat-card-content class="col s12">
+       <br>
+       SEGMENTS:
+          <mat-card-content *ngFor="let segment of dialogOne.segments; let i = index;" class="col s12">
+            <br>
+            FileName:
+            <br>
+            <mat-card>
+              <mat-card-content *ngFor ="let file of segment.fileName">
+                  {{file}}
+              </mat-card-content>
+            </mat-card>
+            characterName:
+            <mat-card>
+              <mat-card-content *ngFor ="let name of segment.characterName">
+                  {{name}}
+              </mat-card-content>
+            </mat-card>
+            <mat-card>
+            CharacterSprite: {{segment.characterSprite}}
+            <br>
+            PL: {{segment.pl}}
+            <br>
+            EN: {{segment.en}}
+            <br>
+            DE: {{segment.de}}
+          </mat-card>
+            <br>
+            <br>
+            <br>
+          </mat-card-content>
+      </mat-card-content>
 
-          <div class="row">
-            <div class="input-field col s8">
-              <input [(ngModel)]="oneSegment.characterSprite" id="characterSprite" name="characterSprite" type="text" [placeholder]="this.data[0].segments.characterSprite"/>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="input-field col s8">
-              <input [(ngModel)]="oneSegment.pl" id="pl" name="pl" type="text" [placeholder]="this.data[0].pl"/>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="input-field col s8">
-              <input [(ngModel)]="oneSegment.en" id="en" name="en" type="text" [placeholder]="this.data[0].en" />
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="input-field col s8">
-              <input [(ngModel)]="oneSegment.de" id="de" name="de" type="text" [placeholder]="this.data[0].de" />
-            </div>
-          </div>
-
-    </div>
-
-    <button class="btn-small" type="submit">Submit</button>
-    <button class="btn-small red" type="reset">Reset</button>
-  </form>
+    </mat-card>
+ </div>
 </div>
 
 
+<app-show-list>
+  <mat-card>
+    <mat-card-content>
+      To jest tutaj
+      {{dialogOne.dialogName}}
+      oooooooo
+      <br />
+
+      <div class="container">
+          <br />
+          <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+
+                <h1 class="text-danger text-center">segments</h1>
+<!--  -->
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="my-3">
+                      <div class ="my-3" *ngFor = "let segment of segmentsHere().controls; let i=index">
+                        <div>
+                          <!-- <div *ngFor ="let file of fileName"; j="index"> -->
+
+                                <div  [formArrayName]="fileName" > fileName:
+                                  <div *ngFor="let file of segment; let j=index "></div>
+                                </div>
 
 
+                         <!-- </div> -->
+                        </div>
+
+
+                    <!--             <ng-container *ngFor="let fileName of item.value.fileName; let j=index" >
+                                 <ng-container [formControlName]="j">
+                                 </ng-container>
+                              </ng-container>-->
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                     <button class="btn btn-primary" type="button" (click)="onAddSegment()">Add segment</button>
+                     <button type="submit" >Add all record</button>
+
+
+
+
+
+    </form>
+  </div>
+
+    </mat-card-content>
+  </mat-card>
+
+</app-show-list>

@@ -12,7 +12,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-dialog.component.css']
 })
 export class AddDialogComponent implements OnInit  {
- model: Partial<Dialog> = {};
+model: Partial<Dialog>;
+
+
  sections: string[] = [];
  data = [] as any;
  oneSegment=[] as any;
@@ -21,6 +23,7 @@ export class AddDialogComponent implements OnInit  {
 
   ngOnInit(): void {
     //this.http.getSections().subscribe(sections =>this.sections = sections)
+    this.model={};
   }
 
 
